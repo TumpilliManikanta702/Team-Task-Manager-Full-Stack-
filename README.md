@@ -53,8 +53,8 @@ Backend Setup:
    npm install
 3. Create .env file with:
    PORT=5000
-   MONGODB_URI=your_mongodb_connection_string
-   JWT_SECRET=your_secret_key
+   MONGODB_URI=mongodb+srv://manikanta:MMani12@cluster0.8nvxe8y.mongodb.net/?appName=Cluster0
+   JWT_SECRET=supersecretjwtkey123
    NODE_ENV=development
 4. Start backend server:
    npm run dev
@@ -73,7 +73,7 @@ Frontend Setup:
 Production Setup:
 
 * Set environment variable in frontend:
-  VITE_API_URL=https://your-backend-url/api
+  VITE_API_URL=[https://your-backend-url/api](https://team-task-manager-full-stack.onrender.com/)
 * Ensure backend allows requests from frontend (CORS enabled)
 
 Usage:
