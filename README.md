@@ -62,7 +62,7 @@ A full-stack, production-ready Team Task Manager web application built with the 
    ```bash
    npm run dev
    ```
-4. The application will be available at `http://localhost:5175`. 
+4. The application will be available at `http://localhost:5173`. 
    *(Note: The Vite proxy is preconfigured to forward `/api` requests to `http://localhost:5000`)*
 
 ## 🌐 Railway Deployment Steps
