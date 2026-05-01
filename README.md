@@ -1,98 +1,96 @@
-# TaskFlow - Team Task Manager
+Project Name: TaskFlow - Team Task Manager
 
-A full-stack, production-ready Team Task Manager web application built with the MERN stack (MongoDB, Express, React, Node.js) and styled with Tailwind CSS. It features a sleek, modern UI, role-based access control, interactive dashboards, and Kanban-style task management.
+Description:
+TaskFlow is a full-stack, production-ready Team Task Manager web application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) and styled with Tailwind CSS. It features a modern user interface, role-based access control, interactive dashboards, and Kanban-style task management.
 
-## 🚀 Features
+Features:
 
-- **Authentication:** Secure JWT-based signup and login system with password hashing.
-- **Role-Based Access:** 
-  - **Admin:** Create projects, manage members, and have full control over tasks.
-  - **Member:** View assigned projects and update task statuses.
-- **Project Management:** Track multiple projects, view member counts, and see task statistics.
-- **Task Management (Kanban):** Manage tasks dynamically through a Kanban board (To Do, In Progress, Done).
-- **Dashboard:** Interactive charts (via Recharts) providing insights into task progression.
-- **Beautiful UI:** Built with Vite, React, and Tailwind CSS with a sleek dark-mode aesthetic and micro-animations.
+* Secure authentication using JWT and password hashing
+* Role-Based Access:
+  Admin: Create projects, manage members, and control tasks
+  Member: View assigned projects and update task statuses
+* Project management with task tracking and statistics
+* Kanban board for task workflow (To Do, In Progress, Done)
+* Interactive dashboard with charts (Recharts)
+* Responsive UI with Tailwind CSS and modern design
 
-## 🛠️ Tech Stack
+Tech Stack:
+Frontend:
 
-- **Frontend:** React.js, Vite, Tailwind CSS, React Router, Axios, Recharts, Lucide Icons
-- **Backend:** Node.js, Express.js, MongoDB Atlas (Mongoose), JWT, bcryptjs
-- **Deployment:** Ready for Railway
+* React.js (Vite)
+* Tailwind CSS
+* React Router
+* Axios
+* Recharts
+* Lucide Icons
 
-## ⚙️ Local Setup
+Backend:
 
-### Prerequisites
-- Node.js (v16+ recommended)
-- MongoDB account (or local MongoDB)
+* Node.js
+* Express.js
+* MongoDB (Mongoose)
+* JWT (Authentication)
+* bcryptjs (Password hashing)
 
-### 1. Backend Setup
+Deployment:
 
-1. Open a terminal and navigate to the `backend` directory:
-   ```bash
+* Frontend: Vercel
+* Backend: Render / Railway
+* Database: MongoDB Atlas
+
+Local Setup:
+
+Prerequisites:
+
+* Node.js (version 16 or above)
+* MongoDB Atlas account or local MongoDB
+
+Backend Setup:
+
+1. Navigate to backend folder:
    cd backend
-   ```
 2. Install dependencies:
-   ```bash
    npm install
-   ```
-3. Create a `.env` file in the `backend` folder and add the following:
-   ```env
+3. Create .env file with:
    PORT=5000
    MONGODB_URI=your_mongodb_connection_string
-   JWT_SECRET=your_jwt_secret_key
+   JWT_SECRET=your_secret_key
    NODE_ENV=development
-   ```
-4. Start the backend development server:
-   ```bash
+4. Start backend server:
    npm run dev
-   ```
-   *(Ensure you have `nodemon` installed globally or set up in your package.json scripts. Otherwise, just run `node server.js`)*
 
-### 2. Frontend Setup
+Frontend Setup:
 
-1. Open a new terminal and navigate to the `frontend` directory:
-   ```bash
+1. Navigate to frontend folder:
    cd frontend
-   ```
 2. Install dependencies:
-   ```bash
    npm install
-   ```
-3. Start the frontend development server:
-   ```bash
+3. Start frontend:
    npm run dev
-   ```
-4. The application will be available at `http://localhost:5173`. 
-   *(Note: The Vite proxy is preconfigured to forward `/api` requests to `http://localhost:5000`)*
+4. Open in browser:
+   http://localhost:5173
 
-## 🌐 Railway Deployment Steps
+Production Setup:
 
-This application is split into two directories (`frontend` and `backend`). You can deploy them as two separate services on Railway.
+* Set environment variable in frontend:
+  VITE_API_URL=https://your-backend-url/api
+* Ensure backend allows requests from frontend (CORS enabled)
 
-### Backend Deployment
-1. Go to Railway.app and create a new project.
-2. Select "Deploy from GitHub repo" and select your repository.
-3. In the Railway dashboard for the deployed service, go to **Settings > General** and set the **Root Directory** to `/backend`.
-4. Go to the **Variables** tab and add your Environment Variables:
-   - `MONGODB_URI`
-   - `JWT_SECRET`
-   - `PORT` (Railway usually sets this automatically, but you can explicitly define it)
-5. Railway will automatically detect Node.js and run `npm start` (make sure you add `"start": "node server.js"` to `backend/package.json`).
+Usage:
 
-### Frontend Deployment
-1. In the same Railway project, click **New > GitHub Repo** and select the same repository.
-2. Go to **Settings > General** and set the **Root Directory** to `/frontend`.
-3. Railway will detect it's a Vite application.
-4. **Important**: Since the backend URL is dynamically generated by Railway, you need to tell the frontend where to make API calls in production.
-   - In `frontend/src/api/axios.js`, change the `baseURL` conditionally or via an env variable.
-   - Example: `baseURL: import.meta.env.VITE_API_URL || '/api'`
-5. In Railway, go to the **Variables** tab for the frontend service and add `VITE_API_URL=https://your-backend-railway-url.app/api`.
-6. Go to the **Settings > Networking** tab and click **Generate Domain** so your app is accessible online.
+* First registered user becomes Admin automatically
+* Admin can create and manage projects and tasks
+* Members can update task status using Kanban board
 
-## 📝 Usage Notes
+Project Highlights:
 
-- **Admin Creation:** The very first user that registers on the platform will automatically be assigned the `Admin` role. All subsequent registrations will be `Member` role by default.
-- **Admin Capabilities:** Only Admins can create new Projects, add Tasks, or delete them. Members can only update the status of existing tasks.
+* Clean and scalable architecture
+* Secure authentication system
+* Real-time UI updates
+* Production-ready deployment structure
 
-## 📄 License
+Author:
+Manikanta Tumpilli
+
+License:
 ISC
